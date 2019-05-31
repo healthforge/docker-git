@@ -6,7 +6,7 @@ A simple ephemeral git server for use in tests
 `make build start` to run a copy.
 Once started, clone the test repo with:
 ```
-git clone http://localhost:3080/git/test.git
+git clone http://localhost:4080/git/test.git
 ```
 
 Supports pushing without any auth. Not for production use.
