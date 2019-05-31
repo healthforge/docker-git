@@ -1,7 +1,12 @@
 steps:
 - label: ":docker: Build and publish"
-  command: 'docker build -t ${REPOSITORY_URI}:${BUILDKITE_BUILD_ID} .'
+  command:
+  - docker build -t healthforge/git .
+  - docker push healthforge/git
   plugins:
-    healthforge/docker-tags:
-      registry: '${REPOSITORY_URI}'
-      tag: '${BUILDKITE_BUILD_ID}'
+  - docker-login#v2.0.1:
+      server: docker.io
+      username: hfminion
+      password-env: DOCKER_HUB_PASSWORD
+  agents:
+    queue: hf-dev
