@@ -12,3 +12,5 @@ git clone http://localhost:4080/git/test.git
 Supports pushing without any auth. Not for production use.
 
 Contents will be reset on container restart. Handy.
+
+Repos have too be tared to support empty files.
